@@ -1,0 +1,19 @@
+{
+  "appId": "com.antman.grandlineblazing",
+  "appName": "Hundred Masks",
+  "webDir": "www",
+  "ios": {
+    "contentInset": "never",
+    "backgroundColor": "#120804",
+    "scrollEnabled": false
+  },
+  "android": {
+    "backgroundColor": "#0e1228"
+  },
+  "plugins": {
+    "CapacitorUpdater": {
+      "autoUpdate": false,
+      "resetWhenUpdate": false
+    }
+  }
+}
