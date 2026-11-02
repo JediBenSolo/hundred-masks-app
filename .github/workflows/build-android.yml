@@ -28,7 +28,9 @@ jobs:
           # only the compile SDK moves, the target SDK stays, and AGP 8.2's "untested SDK" warning is silenced
           sed -i -E 's/compileSdkVersion = [0-9]+/compileSdkVersion = 35/' android/variables.gradle
           echo "android.suppressUnsupportedCompileSdk=35" >> android/gradle.properties
-          grep -n compileSdkVersion android/variables.gradle
+          # Google Play Services (also pulled in by the update plugin) needs Android 6.0+
+          sed -i -E 's/minSdkVersion = [0-9]+/minSdkVersion = 23/' android/variables.gradle
+          grep -nE 'compileSdkVersion|minSdkVersion' android/variables.gradle
       - name: Adaptive app icon (the game logo on the night sky)
         run: |
           mkdir -p assets

@@ -20,7 +20,7 @@ ANDROID (phones, tablets, foldables)
      HundredMasks.apk  install this on the phone or tablet
      HundredMasks.aab  only for publishing on Google Play (Play Console > Create app > upload it)
 7. Copy HundredMasks.apk to the device (or download it there), open it and allow "Install unknown apps" for the
-   app you opened it with when Android asks. Android 5.1 and newer; the game fills tablets and unfolded
+   app you opened it with when Android asks. Android 6.0 and newer; the game fills tablets and unfolded
    foldables and re-fits when you fold, unfold or use split screen. The Back button closes windows, opens the
    pause menu in battle and returns to the Cove; on the Cove it puts the game in the background.
    (Without the signing secrets the run makes HundredMasks-debug.apk instead: fine to try the game, but a later
