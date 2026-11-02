@@ -22,7 +22,13 @@ jobs:
       - name: Install Capacitor
         run: npm install
       - name: Create the Android project
-        run: npx cap add android
+        run: |
+          npx cap add android
+          # the update plugin pulls androidx.work 2.10+, which needs compile SDK 35 (Capacitor 6 defaults to 34);
+          # only the compile SDK moves, the target SDK stays, and AGP 8.2's "untested SDK" warning is silenced
+          sed -i -E 's/compileSdkVersion = [0-9]+/compileSdkVersion = 35/' android/variables.gradle
+          echo "android.suppressUnsupportedCompileSdk=35" >> android/gradle.properties
+          grep -n compileSdkVersion android/variables.gradle
       - name: Adaptive app icon (the game logo on the night sky)
         run: |
           mkdir -p assets
